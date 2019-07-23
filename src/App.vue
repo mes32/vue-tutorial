@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="small-container">
     <h1>Employees</h1>
-    <EmployeeTable />
+    <EmployeeTable :employees="employees" />
   </div>
 </template>
 
@@ -12,6 +12,27 @@ export default {
   name: 'app',
   components: {
     EmployeeTable
+  },
+  data() {
+    return {
+      employees: [
+        {
+          id: 1,
+          name: 'Ada Lovelace',
+          email: 'ada@vue-tutorial.com'
+        },
+        {
+          id: 2,
+          name: 'Alan Turing',
+          email: 'alan@vue-tutorial.com'
+        },
+        {
+          id: 3,
+          name: 'John von Neumann',
+          email: 'john@vue-tutorial.com'
+        }
+      ]
+    }
   }
 }
 </script>

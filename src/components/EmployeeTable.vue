@@ -8,17 +8,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Ada Lovelace</td>
-          <td>ada@vue-tutorial.com</td>
-        </tr>
-        <tr>
-          <td>Alan Turing</td>
-          <td>alan@vue-tutorial.com</td>
-        </tr>
-        <tr>
-          <td>John von Neumann</td>
-          <td>john@vue-tutorial.com</td>
+        <tr v-for="employee in employees" :key="employee.id">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
         </tr>
       </tbody>
     </table>
@@ -27,7 +19,10 @@
 
 <script>
 export default {
-  name: 'employee-table',
+  name: 'EmployeeTable',
+  props: {
+    employees: Array
+  }
 }
 </script>
 
