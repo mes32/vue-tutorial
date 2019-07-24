@@ -39,7 +39,9 @@
     },
     methods: {
       addEmployee(employee) {
-        this.employees = [...this.employees, employee]
+        const id = this.employees.length > 0 ? this.employees.length + 1 : 1
+        const newEmployee = { ...employee, id }
+        this.employees = [...this.employees, newEmployee]
       }
     }
   }
