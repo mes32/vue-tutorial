@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="small-container">
     <h1>Employees</h1>
-    <EmployeeForm />
+    <EmployeeForm @add:employee="addEmployee" />
     <EmployeeTable :employees="employees" />
   </div>
 </template>
@@ -35,6 +35,11 @@
             email: 'john@vue-tutorial.com'
           }
         ]
+      }
+    },
+    methods: {
+      addEmployee(employee) {
+        this.employees = [...this.employees, employee]
       }
     }
   }
