@@ -2,7 +2,7 @@
   <div id="app" class="small-container">
     <h1>Employees</h1>
     <EmployeeForm @add:employee="addEmployee" />
-    <EmployeeTable :employees="employees" />
+    <EmployeeTable :employees="employees" @delete:employee="deleteEmployee" />
   </div>
 </template>
 
@@ -42,6 +42,11 @@
         const id = this.employees.length > 0 ? this.employees.length + 1 : 1
         const newEmployee = { ...employee, id }
         this.employees = [...this.employees, newEmployee]
+      },
+      deleteEmployee(id) {
+        this.employees = this.employees.filter(
+          employee => employee.id !== id
+        )
       }
     }
   }
