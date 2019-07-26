@@ -6,6 +6,7 @@
         ref="first"
         type="text"
         :class="{ 'has-error': submitting && invalidName }"
+        v-model="employee.name"
         @focus="clearStatus"
         @keypress="clearStatus" 
       />
@@ -15,6 +16,7 @@
         :class="{ 'has-error': submitting && invalidEmail }"
         v-model="employee.email"
         @focus="clearStatus"
+        @keypress="clearStatus"
       />
       <p v-if="error && submitting" class="error-message">
         ❗Please fill all required fields
